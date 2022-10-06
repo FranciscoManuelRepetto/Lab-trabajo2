@@ -1,0 +1,63 @@
+{
+    "desayunos":[
+        {
+            "nombre":"Et voluptate et nostrud eiusmod",
+            "ingredientes":"Ad cillum aliqua esse irure. Cupidatat esse eu Lorem esse occaecat elit voluptate consectetur ex officia non occaecat labore. Est irure pariatur consectetur consectetur dolore tempor ullamco sunt exercitation nostrud. Tempor nisi amet cillum velit id qui occaecat ex consequat. Nisi amet commodo reprehenderit dolor laborum sunt quis aliquip adipisicing commodo qui dolor.",
+            "precio":2,
+            "precioCarnet":1,
+            "fecha":{"year":2022, "month":10, "day":6},
+            "foto":"link",
+            "likes":0
+        },
+        {
+            "nombre":"Aliquip enim duis adipisicing",
+            "ingredientes":"Ad cillum aliqua esse irure. Cupidatat esse eu Lorem esse occaecat elit voluptate consectetur ex officia non occaecat labore. Est irure pariatur consectetur consectetur dolore tempor ullamco sunt exercitation nostrud. Tempor nisi amet cillum velit id qui occaecat ex consequat. Nisi amet commodo reprehenderit dolor laborum sunt quis aliquip adipisicing commodo qui dolor.",
+            "precio":2,
+            "precioCarnet":1,
+            "fecha":{"year":2022, "month":10, "day":6},
+            "foto":"link",
+            "likes":0
+        }
+    ]
+    ,
+    "almuerzos":[
+        {
+            "nombre":"Et voluptate et nostrud eiusmod",
+            "ingredientes":"Ad cillum aliqua esse irure. Cupidatat esse eu Lorem esse occaecat elit voluptate consectetur ex officia non occaecat labore. Est irure pariatur consectetur consectetur dolore tempor ullamco sunt exercitation nostrud. Tempor nisi amet cillum velit id qui occaecat ex consequat. Nisi amet commodo reprehenderit dolor laborum sunt quis aliquip adipisicing commodo qui dolor.",
+            "precio":2,
+            "precioCarnet":1,
+            "fecha":{"year":2022, "month":10, "day":6},
+            "foto":"link",
+            "likes":0
+        },
+        {
+            "nombre":"Aliquip enim duis adipisicing",
+            "ingredientes":"Ad cillum aliqua esse irure. Cupidatat esse eu Lorem esse occaecat elit voluptate consectetur ex officia non occaecat labore. Est irure pariatur consectetur consectetur dolore tempor ullamco sunt exercitation nostrud. Tempor nisi amet cillum velit id qui occaecat ex consequat. Nisi amet commodo reprehenderit dolor laborum sunt quis aliquip adipisicing commodo qui dolor.",
+            "precio":2,
+            "precioCarnet":1,
+            "fecha":{"year":2022, "month":10, "day":6},
+            "foto":"link",
+            "likes":0
+        }
+    ],
+    "merienda":[
+        {
+            "nombre":"Et voluptate et nostrud eiusmod",
+            "ingredientes":"Ad cillum aliqua esse irure. Cupidatat esse eu Lorem esse occaecat elit voluptate consectetur ex officia non occaecat labore. Est irure pariatur consectetur consectetur dolore tempor ullamco sunt exercitation nostrud. Tempor nisi amet cillum velit id qui occaecat ex consequat. Nisi amet commodo reprehenderit dolor laborum sunt quis aliquip adipisicing commodo qui dolor.",
+            "precio":2,
+            "precioCarnet":1,
+            "fecha":{"year":2022, "month":10, "day":6},
+            "foto":"link",
+            "likes":0
+        },
+        {
+            "nombre":"Aliquip enim duis adipisicing",
+            "ingredientes":"Ad cillum aliqua esse irure. Cupidatat esse eu Lorem esse occaecat elit voluptate consectetur ex officia non occaecat labore. Est irure pariatur consectetur consectetur dolore tempor ullamco sunt exercitation nostrud. Tempor nisi amet cillum velit id qui occaecat ex consequat. Nisi amet commodo reprehenderit dolor laborum sunt quis aliquip adipisicing commodo qui dolor.",
+            "precio":2,
+            "precioCarnet":1,
+            "fecha":{"year":2022, "month":10, "day":6},
+            "foto":"link",
+            "likes":0
+        }
+    ]
+}
