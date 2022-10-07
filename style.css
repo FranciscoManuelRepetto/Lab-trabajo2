@@ -1,0 +1,43 @@
+body{
+    margin: 2%;
+    margin-left: 50px;
+    margin-right:50px;
+}
+
+
+
+.conteiner{
+    border: 2px solid red;
+}
+
+.movientoNaranja:hover{
+    background-color: orangered;
+}
+
+.img-grande{
+    width: 800px;
+    height: 250px;
+    margin: auto;
+    filter: brightness(0.5);
+}
+
+
+.caja-de-menu-grande{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 800px;
+    height: 600px;
+    font-size: 0.40cm;
+    background-color:white;
+    border:2px solid green;
+}
+
+.conteiner-row{
+    display: flex;
+    flex-direction: row;
+}
