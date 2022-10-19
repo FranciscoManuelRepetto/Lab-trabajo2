@@ -7,6 +7,7 @@
             "precioCarnet":1,
             "fecha":{"year":2022, "month":10, "day":6},
             "foto":"https://assets.unileversolutions.com/recipes-v2/209413.jpg",
+            "reservas":100,
             "likes":0
         },
         {
@@ -16,6 +17,7 @@
             "precioCarnet":1,
             "fecha":{"year":2022, "month":10, "day":6},
             "foto":"https://assets.unileversolutions.com/recipes-v2/209413.jpg",
+            "reservas":100,
             "likes":0
         }
     ]
@@ -28,6 +30,7 @@
             "precioCarnet":1,
             "fecha":{"year":2022, "month":10, "day":6},
             "foto":"https://assets.unileversolutions.com/recipes-v2/209413.jpg",
+            "reservas":100,
             "likes":0
         },
         {
@@ -37,6 +40,7 @@
             "precioCarnet":1,
             "fecha":{"year":2022, "month":10, "day":6},
             "foto":"https://assets.unileversolutions.com/recipes-v2/209413.jpg",
+            "reservas":100,
             "likes":0
         }
     ],
@@ -48,6 +52,7 @@
             "precioCarnet":1,
             "fecha":{"year":2022, "month":10, "day":6},
             "foto":"link",
+            "reservas":100,
             "likes":0
         },
         {
@@ -57,6 +62,7 @@
             "precioCarnet":1,
             "fecha":{"year":2022, "month":10, "day":6},
             "foto":"link",
+            "reservas":100,
             "likes":0
         }
     ]
