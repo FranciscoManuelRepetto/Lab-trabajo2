@@ -5,24 +5,58 @@
 
 body{
     margin: auto;
-    background-color: #666;
+    background-color: rgb(41, 40, 40);
     display: grid;
     min-height: 100vh;
     grid-template-rows: auto 1fr auto;
 }
 
-/*Contenedor de los titulos*/
-.conteiner{
-    border: 2px solid red;
-    background-color: #666;
+/*Encabezado*/
+#title-Unco{
+    font-size: 2vw;
+    font-weight:800;
+    font-family: "Lucida Console", Courier, monospace;
+    margin-left: 2vw;
+
+}
+
+.logo-Unco{
+    width: 6vw;
+    height:6vw;
+    margin-left: 1vw;
+    margin-right: 12vw;
+}
+
+/*Imagen de fondo del menu*/
+.background-img-menu{
+    background-image: url("https://10619-2.s.cdn12.com/rests/original/104_355872023.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#darken-background{
+    width : 100%;
+	height : 100%;
+    background-color: rgb(41, 40, 40);
+    opacity: 0.9;
+}
+
+/*Contenedor del titulo de comida hoy*/
+.title-menu-today{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100px;
     max-width: 100%;
+    color: white;
+    font-weight: 600;
+    font-size: 3.5vw;
 
 }
 
 /*Contenedor de las comidas*/
 .container-menus{
-    border: 2px solid red;
     margin: 2%
 }
 
@@ -31,16 +65,37 @@ body{
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    border: 2px solid red;
 }
 
+/*Eslogan*/
+.tip{
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    padding: 2vw;
+}
+
+.people-eat{
+    filter: brightness(0%);
+    width: 20vw;
+    height: 20vw;
+}
+
+.fork{
+    width: 20vw;
+    height: 20vw;
+}
+
+/*Menu de desayuno,almuerzo,merienda*/
 #time-foods{
     display: flex;
     justify-content: center;
+    color: white;
+    font-weight: 500;
 }
 
 .little-box{
-    border: 2px solid cyan;
     position: relative;
     display: inline-block;
     text-align: center;
@@ -90,11 +145,12 @@ body{
     gap: 0.25rem;
     justify-content: center;
     position: relative;
+    font-size: 2vw;
 }
 
 /*Datos de contacto*/
 .contact{
-    background-color: #23282d;
+    background-color: #101214;
     height: 150px;
     max-width: 100%;
 }
@@ -106,15 +162,6 @@ body{
     height: 300px;
     margin: auto;
     filter: brightness(0.5);
-}
-
-#darken-background{
-    position: absolute;
-    width : 100%;
-	height : 100%;
-    background-color: grey;
-    opacity: 0.7;
-    
 }
 
 .large-menu-box{
