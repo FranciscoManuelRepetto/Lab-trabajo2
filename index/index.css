@@ -5,34 +5,25 @@
 
 body{
     margin: auto;
+    background-color: #666;
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
 }
 
+/*Contenedor de los titulos*/
+.conteiner{
+    border: 2px solid red;
+    background-color: #666;
+    height: 100px;
+    max-width: 100%;
+
+}
+
+/*Contenedor de las comidas*/
 .container-menus{
     border: 2px solid red;
-    margin: 2%;
-}
-
-.img-grande{
-    width: 892px;
-    height: 300px;
-    margin: auto;
-    filter: brightness(0.5);
-}
-
-
-.caja-de-menu-grande{
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    width: 900px;
-    height: 700px;
-    font-size: 0.40cm;
-    background-color:white;
-    border:4px solid rgb(87, 86, 86);
+    margin: 2%
 }
 
 .container-row{
@@ -72,7 +63,7 @@ body{
     text-shadow: 4px 4px 2px black;
 }
 
-.img-pequeña{
+.small-image{
     max-height: 100%;
     max-width: 100%;
 }
@@ -92,20 +83,32 @@ body{
     }
 }
 
-body{
-    margin: 2%;
-    margin-left: 50px;
-    margin-right:50px;
+/*Proximas comidas*/
+.next-meals{
+    align-items: center;
+    display: flex;
+    gap: 0.25rem;
+    justify-content: center;
+    position: relative;
 }
 
-.conteiner{
-    border: 2px solid red;
-    
+/*Datos de contacto*/
+.contact{
+    background-color: #23282d;
+    height: 150px;
+    max-width: 100%;
 }
 
+/*ESTILO DEL MENU AMPLIADO*/
 
+.big-image{
+    width: 892px;
+    height: 300px;
+    margin: auto;
+    filter: brightness(0.5);
+}
 
-.oscurecerFondo{
+#darken-background{
     position: absolute;
     width : 100%;
 	height : 100%;
@@ -114,16 +117,30 @@ body{
     
 }
 
-.titulo-menu-grande{
+.large-menu-box{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 900px;
+    height: 680px;
+    font-size: 0.40cm;
+    background-color:white;
+    border:4px solid rgb(87, 86, 86);
+}
+.big-menu-title{
     font-size: 3em;
     font-family: 'Bevan';
 }
 
-.parrafo-menu-grande{
+.large-menu-paragraph{
     font-size: 1.2em;
 }
 
-.precio{
+.price{
     color: rgb(4, 123, 197);
     font-size: 1.7em;
     font-family: Vegur, 'PT Sans', Verdana, sans-serif;
@@ -132,7 +149,7 @@ body{
     margin-right: 20px;
 }
 
-#boton-reservar {
+#button-to-reserve {
     width: 280px;
     height: 80px;
     margin: 10px;
@@ -142,11 +159,12 @@ body{
     font-family: Vegur, 'PT Sans', Verdana, sans-serif;
     color: white;
     border-radius: 15px;
+    float: right;
   }
 
-#boton-reservar:hover {background-color:rgb(2, 67, 107)}
+#button-to-reserve:hover {background-color:rgb(2, 67, 107)}
 
-#boton-reservar:active {
+#button-to-reserve:active {
   background-color: rgb(4, 123, 197);
   box-shadow: 0 5px #666;
   transform: translateY(4px);
@@ -155,4 +173,29 @@ body{
 .conteiner-row{
     display: flex;
     flex-direction: row;
+}
+
+#like-button{
+    display: block;
+    font-size: 52px; 
+    border: solid; 
+    padding: 10px;
+    margin: 10px; 
+    border-radius: 50%;
+     background-color: rgb(255, 255, 255); 
+     color: rgb(0, 0, 0);
+}
+
+#close{
+    position: absolute; 
+    right: 20px; top: 13px; width:20px; 
+    background-color: #FFF; 
+    color: black; 
+    margin-top:-15px; margin-right:-15px; border-radius: 20px; 
+    padding-left: 3px; padding-top: 1px; 
+    cursor:pointer; 
+    z-index: 2; 
+    font-size:16px; 
+    font-weight:bold;
+
 }

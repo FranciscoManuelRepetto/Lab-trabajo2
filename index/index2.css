@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: auto;
+    background-color: #666;
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+}
+
+/*Contenedor de los titulos*/
+.conteiner{
+    border: 2px solid red;
+    background-color: #666;
+    height: 100px;
+    max-width: 100%;
+
+}
+
+/*Contenedor que indica el cartel las siguientes comidas*/
+.conteiner-info{
+    border: 2px solid red;
+}
+
+/*Contenedor de las comidas*/
+.container-menus{
+    border: 2px solid red;
+    margin: 2%
+}
+
+/*CAMBIA A LA PRIMERA PAGINA PORQUE VA A HABER MAS DIA ENTONCES LO CAMBIE UN POCO MAS CHICO Y ORDENADO A LA IZQUIERDA ASI CAMBIA*/
+.container-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    border: 2px solid red;
+}
+
+#time-foods{
+    display: flex;
+    justify-content: left;
+}
+
+.little-box{
+    border: 2px solid cyan;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    max-height: 30vh;
+    max-width: 25vw;
+    overflow: hidden;
+}
+
+.little-box-title{
+    max-height: 100%;
+    max-width: 100%;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-80%, -50%);
+}
+
+#little-title-style{
+    color: antiquewhite;
+    text-shadow: 4px 4px 2px black;
+}
+
+.small-image{
+    max-height: 100%;
+    max-width: 100%;
+}
+
+@media (max-width: 6px){
+    #little-title-style{
+        font-size: 0.5vw;
+    }
+
+    .little-box-title{
+        max-height: 100%;
+        max-width: 100%;
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-70%, -50%);
+    }
+}
+
+/*Datos de contacto*/
+.contact{
+    background-color: #23282d;
+    height: 150px;
+    max-width: 100%;
+}
