@@ -1,7 +1,11 @@
 import menus from '../menus.json' assert { type:'json' };
 
-/*
-const elemGrande = document.querySelector(".conteiner");
+let breakElem = document.querySelectorAll('.container-row-food');
+
+let elemts = [];
+breakElem.forEach((elem) => {
+    elemts.push(elem);
+});
 
 const buildTodayDate = () => {
     let today = new Date();
@@ -14,57 +18,17 @@ const buildTodayDate = () => {
 
 let today = buildTodayDate();
 
-let elem = menus["desayunos"][0];
-
-let bigBox = 
-"<div class=\"caja-de-menu-grande\">"+
-"<img class=\"img-grande\" alt=\"Imagen del menu"+elem.nombre+"\""+
-"src=\""+elem.foto+"\">"+
-"<h4 class=\"titulo-menu-grande\">"+elem.nombre+"</h4>"+
-"<p class=\"parrafo-menu-grande\">"+
-elem.ingredientes+
-"</p>"+
-"<p class=\"precio\">Precio: "+elem.precio+"</p>"+
-"<p class=\"precio\">Precio Carnet: "+elem.precioCarnet+"</p>"+
-"<button class=\"boton-reservar\">RESERVAR</button>"+
-"<button><i class=\"bi bi-hand-thumbs-up\"></i></button>"+
-"</div>";
-
-elemGrande.innerHTML += bigBox;
-let elemDesayuno = document.querySelector(".desayuno");
-
-*/
-
-const elemAlmuerzo = document.querySelector(".conteiner");
-
-console.log(menus);
-
-const buildTodayDate = () => {
-    let today = new Date();
-    let dd = String(today.getDate()).padStart(2, '0');
-    let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    let yyyy = today.getFullYear();
-    today = dd + '/' + mm + '/' + yyyy;
-    return today;
-}
-
-let today = buildTodayDate();
-let button = document.querySelector('#clickeable');
-
-
-button.addEventListener('click',
-    aparecerModal()
-);
-function aparecerModal(){
-    let elem = menus["desayunos"][0];
+function aparecerModal(name, number) {
+    let elem = menus[name][number];
     let elements = new Array(8);
 
 
     let bigBox = document.createElement("div");
     bigBox.classList.add("large-menu-box");
 
+    //Create a image
     elements[0] = document.createElement("img");
-    elements[0].classList.add("big-image");
+    elements[0].classList.add("img-grande");
     elements[0].alt = "Imagen del menu: "+elem.nombre;
     elements[0].src = elem.foto;
 
@@ -97,15 +61,13 @@ function aparecerModal(){
     
     elements[7] = document.createElement("button");
     elements[7].id = "close";
-    elements[7].innerHTML += "X";
+    elements[7].innerHTML += "Cerrar";
     
     for(let i=0;i<8;i++){
-        console.log(elements[i]);
-        console.log(i);
         bigBox.appendChild(elements[i]);
     }
     
-    elemAlmuerzo.appendChild(bigBox);
+    document.body.appendChild(bigBox);
     
     let reservar = document.querySelector('#button-to-reserve');
     reservar.addEventListener('click',
@@ -122,12 +84,49 @@ function aparecerModal(){
     );
     
     let close = document.querySelector('#close');
-    console.log(close);
     close.addEventListener('click',
     () => {
-        elemAlmuerzo.removeChild(bigBox);
+        let parent = bigBox.parentNode;
+        parent.removeChild(bigBox);
     }
-    );
+    );   
+}
 
-    
+
+let option = ["desayunos", "almuerzos", "meriendas"];
+let comidas = [menus.desayunos, menus.almuerzos, menus.meriendas];
+
+for (let index = 0; index < 3; index++) {
+    let toGenerate = comidas[index];
+
+    for (let i = 0; i < toGenerate.length; i++) {
+        let elements = new Array(5);
+        
+        let button = document.createElement("button");
+        button.id = "clickeable";
+        button.addEventListener('click', () => {
+            aparecerModal(option[i], i)
+        });
+
+        elements[1] = document.createElement("div");
+        elements[1].classList.add("little-box");
+        button.appendChild(elements[1]);
+
+        elements[2] = document.createElement("img");
+        elements[2].classList.add("small-image");
+        elements[2].alt = "Imagen del menu " + toGenerate[i].nombre;;
+        elements[2].src = toGenerate[i].foto;
+        elements[1].appendChild(elements[2]);
+
+        elements[3] = document.createElement("div");
+        elements[3].classList.add("little-box-title");
+        elements[1].appendChild(elements[3]);
+
+        elements[4] = document.createElement("h4");
+        elements[4].id = "little-title-style";
+        elements[4].innerHTML = toGenerate[i].nombre;
+        elements[3].appendChild(elements[4]);
+        
+        elemts[index].appendChild(button);
+    }
 }
