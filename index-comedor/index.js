@@ -68,7 +68,7 @@ function aparecerModal(name, number) {
     let hiderBack = document.createElement("div");
     hiderBack.id = "hidden-background";
     document.body.appendChild(hiderBack);
-    
+
     let bigBox = document.createElement("div");
     bigBox.classList.add("large-menu-box");
 
@@ -88,6 +88,10 @@ function aparecerModal(name, number) {
 
     let priceContainer = document.createElement("div");
 
+    let reserve = document.createElement("p");
+    reserve.classList.add("reserve");
+    reserve.innerHTML = "Cantidad de Cupones: "+elem.reservas;
+
     let price = document.createElement("p");
     price.classList.add("price");
     price.innerHTML = "Precio: "+elem.precio;
@@ -96,6 +100,7 @@ function aparecerModal(name, number) {
     cardPrice.classList.add("price");
     cardPrice.innerHTML = "Precio Carnet: "+elem.precio;
 
+    priceContainer.appendChild(reserve);
     priceContainer.appendChild(price);
     priceContainer.appendChild(cardPrice);
 
@@ -129,7 +134,8 @@ function aparecerModal(name, number) {
     let reservar = document.querySelector('#button-to-reserve');
     reservar.addEventListener('click',
     () => {
-        elem.reservas--;
+        elem.reservas--;   
+        window.alert("Descargar comprobante de reserva");
     }
     );
 
@@ -145,13 +151,13 @@ function aparecerModal(name, number) {
     () => {
         let parent = bigBox.parentNode;
         parent.removeChild(bigBox);
+        parent.removeChild(hiderBack);
         document.body.style.overflow = "visible";
     }
     );
 
     bigBox.focus();
 }
-
 
 let option = ["desayunos", "almuerzos", "meriendas"];
 let comidas = [menus.desayunos, menus.almuerzos, menus.meriendas];
