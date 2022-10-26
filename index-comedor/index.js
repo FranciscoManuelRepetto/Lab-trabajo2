@@ -18,9 +18,52 @@ const buildTodayDate = () => {
 
 let today = buildTodayDate();
 
+/* Block scroll
+const keys = {37: 1, 38: 1, 39: 1, 40: 1};
+
+function preventDefault(e) {
+  e.preventDefault();
+}
+
+function preventDefaultForScrollKeys(e) {
+  if (keys[e.keyCode]) {
+    preventDefault(e);
+    return false;
+  }
+}
+
+let supportsPassive = false;
+try {
+  window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+    get: function () { supportsPassive = true; } 
+  }));
+} catch(e) {}
+
+let wheelOpt = supportsPassive ? { passive: false } : false;
+let wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+
+
+// call this to Disable
+function disableScroll() {
+    window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
+    window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+    window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+    window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+}
+  
+// call this to Enable
+function enableScroll() {
+    window.removeEventListener('DOMMouseScroll', preventDefault, false);
+    window.removeEventListener(wheelEvent, preventDefault, wheelOpt); 
+    window.removeEventListener('touchmove', preventDefault, wheelOpt);
+    window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+}
+*/
 function aparecerModal(name, number) {
+    document.body.style.overflow = "hidden";
     let elem = menus[name][number];
-    let elements = new Array(8);
+    let countElems = 5;
+    let elements = new Array(countElems);
 
     let hiderBack = document.createElement("div");
     hiderBack.id = "hidden-background";
@@ -31,7 +74,7 @@ function aparecerModal(name, number) {
 
     //Create a image
     elements[0] = document.createElement("img");
-    elements[0].classList.add("img-grande");
+    elements[0].classList.add("big-image");
     elements[0].alt = "Imagen del menu: "+elem.nombre;
     elements[0].src = elem.foto;
 
@@ -43,30 +86,41 @@ function aparecerModal(name, number) {
     elements[2].classList.add("large-menu-paragraph");
     elements[2].innerHTML = elem.ingredientes;
 
-    elements[3] = document.createElement("p");
-    elements[3].classList.add("price");
-    elements[3].innerHTML = "Precio: "+elem.precio;
+    let priceContainer = document.createElement("div");
 
-    elements[4] = document.createElement("p");
-    elements[4].classList.add("price");
-    elements[4].innerHTML = "Precio Carnet: "+elem.precio;
+    let price = document.createElement("p");
+    price.classList.add("price");
+    price.innerHTML = "Precio: "+elem.precio;
 
-    elements[5] = document.createElement("button");
-    elements[5].id = "button-to-reserve";
-    elements[5].innerHTML = "RESERVAR";
+    let cardPrice = document.createElement("p");
+    cardPrice.classList.add("price");
+    cardPrice.innerHTML = "Precio Carnet: "+elem.precio;
 
-    elements[6] = document.createElement("button");
-    elements[6].id = "like-button";
-    let like = document.createElement("i");
-    like.classList.add("bi");
-    like.classList.add("bi-hand-thumbs-up-fill");
-    elements[6].appendChild(like);
+    priceContainer.appendChild(price);
+    priceContainer.appendChild(cardPrice);
+
+    let reserveButton = document.createElement("button");
+    reserveButton.id = "button-to-reserve";
+    reserveButton.innerHTML = "RESERVAR";
+
+    let likeButton = document.createElement("button");
+    likeButton.id = "like-button";
+    let likeIcon = document.createElement("i");
+    likeIcon.classList.add("bi");
+    likeIcon.classList.add("bi-hand-thumbs-up-fill");
+    likeButton.appendChild(likeIcon);
+
+    elements[3] = document.createElement("div");
+    elements[3].classList.add("container-row-buttons");
+    elements[3].appendChild(likeButton);
+    elements[3].appendChild(reserveButton);
+    elements[3].appendChild(priceContainer);
     
-    elements[7] = document.createElement("button");
-    elements[7].id = "close";
-    elements[7].innerHTML += "Cerrar";
+    elements[4] = document.createElement("button");
+    elements[4].id = "close";
     
-    for(let i=0;i<8;i++){
+    
+    for(let i=0;i<countElems;i++){
         bigBox.appendChild(elements[i]);
     }
     
@@ -91,6 +145,7 @@ function aparecerModal(name, number) {
     () => {
         let parent = bigBox.parentNode;
         parent.removeChild(bigBox);
+        document.body.style.overflow = "visible";
     }
     );
 
