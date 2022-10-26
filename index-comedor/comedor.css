@@ -33,6 +33,34 @@ body{
     margin-right: 12vw;
 }
 
+/*Modifica los botones del nav*/
+.bottom-nav{
+    border: none;
+    cursor: pointer;
+    font-size: 1vw;
+    font-weight: 600;
+    padding: 0.5rem 1.5rem;
+    margin: 1rem;
+    color: white;
+    border: 2px solid;
+    background:linear-gradient(to right, transparent 50%, white 50%) no-repeat left / 200%;
+    transition: background-position 0.5s ease;   
+}
+.bottom-nav:hover{
+    background-position: right; 
+    color: black; 
+    border: 2px solid white;
+}
+
+.bottom-nav:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+
 /*Imagen de fondo del menu*/
 .background-img-menu{
     background-image: url("https://10619-2.s.cdn12.com/rests/original/104_355872023.jpg");
@@ -45,7 +73,7 @@ body{
     width : 100%;
 	height : 100%;
     background-color: rgb(41, 40, 40);
-    opacity: 0.9;
+    opacity: 0.85;
 }
 
 /*Contenedor del titulo de comida hoy*/
@@ -84,13 +112,13 @@ body{
 
 .people-eat{
     filter: brightness(0%);
-    width: 20vw;
-    height: 20vw;
+    width: 15vw;
+    height: 15vw;
 }
 
 .fork{
-    width: 20vw;
-    height: 20vw;
+    width: 15vw;
+    height: 15vw;
 }
 
 /*Menu de desayuno,almuerzo,merienda*/
@@ -153,20 +181,50 @@ body{
 }
 
 /*Proximas comidas*/
-.next-meals{
-    align-items: center;
-    display: flex;
-    gap: 0.25rem;
-    justify-content: center;
-    position: relative;
-    font-size: 2vw;
+.next-meals {
+    width: 20vw;
+    height: 5vh;
+    background: rgb(4, 123, 197);
+    position: sticky;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    cursor: pointer;
+    overflow: hidden;
 }
-
-/*Datos de contacto*/
-.contact{
-    background-color: #101214;
-    height: 150px;
-    max-width: 100%;
+  
+.next-meals::before{
+    content: 'Proximas Comidas';
+    color: white;
+    font-family: 'Century Gothic', sans-serif;
+    text-align: center;
+    font-size: 1.1vw;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    transition: all .5s ease-in-out;
+}
+  
+.next-meals:hover::before{
+    top: -30px;
+}
+  
+.next-meals::after {
+    font-family: 'FontAwesome';
+    content: url("icon-meals.png");
+    font-size: 60px;
+    color: red;
+    position: absolute;
+    top: 150%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    transition: all .5s ease-in-out;
+}
+  
+.next-meals:hover::after {
+    top: 50%;
 }
 
 /*ESTILO DEL MENU AMPLIADO*/
