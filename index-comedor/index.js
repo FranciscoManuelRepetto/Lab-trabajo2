@@ -1,9 +1,9 @@
 import menus from '../menus.json' assert { type:'json' };
 
-let breakElem = document.querySelectorAll('.container-row-food');
+let foodElem = document.querySelectorAll('.container-row-food');
 
 let elemts = [];
-breakElem.forEach((elem) => {
+foodElem.forEach((elem) => {
     elemts.push(elem);
 });
 
@@ -22,7 +22,10 @@ function aparecerModal(name, number) {
     let elem = menus[name][number];
     let elements = new Array(8);
 
-
+    let hiderBack = document.createElement("div");
+    hiderBack.id = "hidden-background";
+    document.body.appendChild(hiderBack);
+    
     let bigBox = document.createElement("div");
     bigBox.classList.add("large-menu-box");
 
@@ -89,7 +92,9 @@ function aparecerModal(name, number) {
         let parent = bigBox.parentNode;
         parent.removeChild(bigBox);
     }
-    );   
+    );
+
+    bigBox.focus();
 }
 
 
@@ -130,3 +135,17 @@ for (let index = 0; index < 3; index++) {
         elemts[index].appendChild(button);
     }
 }
+
+
+let elemntsNextMeals = document.querySelectorAll('#next-meal');
+let buttonsNextMeal = [];
+elemntsNextMeals.forEach((elem) => {
+    buttonsNextMeal.push(elem);
+});
+
+buttonsNextMeal[0].addEventListener('click', () => {
+    location.href = "../proxComedor/proxComidas.html";
+});
+buttonsNextMeal[1].addEventListener('click', () => {
+    location.href = "../proxComedor/proxComidas.html";
+});

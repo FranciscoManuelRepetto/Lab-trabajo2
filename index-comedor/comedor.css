@@ -14,9 +14,25 @@ body{
 /*Encabezado*/
 #title-Unco{
     font-size: 2vw;
-    font-weight:800;
+    font-weight: 800;
     font-family: "Lucida Console", Courier, monospace;
     margin-left: 2vw;
+    margin-top: 2vw;
+}
+
+@media (max-width: 1000px) {
+    #title-Unco{
+        font-size: 20px;
+        font-weight: 800;
+        font-family: "Lucida Console", Courier, monospace;
+        margin-left: 0vw;
+    }
+
+    .logo-Unco{
+        width: 10vw;
+        height: 10vw;
+        margin-right: 12vw;
+    }
 }
 
 .container-row{
@@ -28,10 +44,43 @@ body{
 
 .logo-Unco{
     width: 6vw;
-    height:6vw;
+    height: 6vw;
     margin-left: 1vw;
     margin-right: 12vw;
 }
+
+#navbarNav{
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+/*Modifica los botones del nav*/
+.bottom-nav{
+    border: none;
+    cursor: pointer;
+    font-size: 1vw;
+    font-weight: 600;
+    padding: 0.5rem 1.5rem;
+    margin: 1rem;
+    color: white;
+    border: 2px solid;
+    background:linear-gradient(to right, transparent 50%, white 50%) no-repeat left / 200%;
+    transition: background-position 0.5s ease;   
+}
+.bottom-nav:hover{
+    background-position: right; 
+    color: black; 
+    border: 2px solid white;
+}
+
+.bottom-nav:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
 
 /*Imagen de fondo del menu*/
 .background-img-menu{
@@ -58,7 +107,13 @@ body{
     color: white;
     font-weight: 600;
     font-size: 3.5vw;
+}
 
+.container-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 /*Contenedor de las comidas*/
@@ -101,13 +156,10 @@ body{
     font-weight: 500;
 }
 
-#clickeable:hover{
-
+#clickeable{
+    
 }
 
-/*
-
-*/
 
 .little-box{
     position: relative;
@@ -153,13 +205,50 @@ body{
 }
 
 /*Proximas comidas*/
-.next-meals{
-    align-items: center;
-    display: flex;
-    gap: 0.25rem;
-    justify-content: center;
-    position: relative;
-    font-size: 2vw;
+.next-meals {
+    width: 20vw;
+    height: 5vh;
+    background: rgb(4, 123, 197);
+    position: sticky;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    cursor: pointer;
+    overflow: hidden;
+}
+  
+.next-meals::before{
+    content: 'Proximas Comidas';
+    color: white;
+    font-family: 'Century Gothic', sans-serif;
+    text-align: center;
+    font-size: 1.1vw;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    transition: all .5s ease-in-out;
+}
+  
+.next-meals:hover::before{
+    top: -30px;
+}
+  
+.next-meals::after {
+    font-family: 'FontAwesome';
+    content: url("../images/icon-meals.png");
+    font-size: 60px;
+    color: red;
+    position: absolute;
+    top: 150%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all .5s ease-in-out;
+}
+  
+.next-meals:hover::after {
+    top: 50%;
 }
 
 /*Datos de contacto*/
@@ -179,7 +268,7 @@ body{
 }
 
 .large-menu-box{
-    position: absolute;
+    position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
@@ -228,7 +317,9 @@ body{
     float: right;
   }
 
-#button-to-reserve:hover {background-color:rgb(2, 67, 107)}
+#button-to-reserve:hover {
+    background-color:rgb(2, 67, 107)
+}
 
 #button-to-reserve:active {
   background-color: rgb(4, 123, 197);
@@ -241,68 +332,6 @@ body{
     flex-direction: row;
 }
 
-/*
-#like-button {
-  all: unset;
-  width: 10px;
-  height: 30px;
-  font-size: 16px;
-  background: transparent;
-  border: none;
-  position: relative;
-  color: #f0f0f0;
-  cursor: pointer;
-  z-index: 1;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  white-space: nowrap;
-}
-
-#like-button::after,
-#like-button::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  z-index: -99999;
-  transition: all .4s;
-}
-
-#like-button::before {
-  transform: translate(0%, 0%);
-  width: 100%;
-  height: 100%;
-  background: #28282d;
-  border-radius: 10px;
-}
-
-#like-button::after {
-  transform: translate(10px, 10px);
-  width: 35px;
-  height: 35px;
-  background: #ffffff15;
-  backdrop-filter: blur(5px);
-  border-radius: 50px;
-  border-radius: 10px;
-  transform: translate(0, 0);
-  width: 100%;
-  height: 100%;
-}
-
-#like-button:hover::before {
-  transform: translate(5%, 20%);
-  width: 110%;
-  height: 110%;
-}
-
-
-#like-button:active::after {
-  transition: 0s;
-  transform: translate(0, 5%);
-}
-*/
 #like-button {
   align-items: center;
   appearance: none;
@@ -356,5 +385,11 @@ body{
     z-index: 2; 
     font-size:16px; 
     font-weight:bold;
+}
 
+
+#hidden-background{
+    background: rgba(77, 77, 77, 0.2);
+    border-radius: 16px;
+    backdrop-filter: blur(50px);
 }
