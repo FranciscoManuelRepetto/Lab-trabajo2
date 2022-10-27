@@ -61,6 +61,7 @@ function enableScroll() {
 */
 function aparecerModal(name, number) {
     document.body.style.overflow = "hidden";
+
     let elem = menus[name][number];
     let countElems = 5;
     let elements = new Array(countElems);

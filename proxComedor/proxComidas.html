@@ -3,54 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <title>Proximas Comidas</title>
-    <link rel="stylesheet" href="index2.css">
+    <link rel="stylesheet" href="proxComidas.css">
     <!--Los siguientes links son de bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 
  <!--HAY QUE CREAR OTRO CSS-->
 
 <body>
-    <h1 class="conteiner">Comedor Universitario Neuquen</h1>
-    <h2 class="conteiner-info">Proximas Comidas</h2>
+    <nav class="navbar sticky-top nav-fill navbar-expand-lg navbar-dark bg-dark">
+        <img class="logo-Unco" alt="Logo de la universidad nacional del comahue" src="https://web.curza.uncoma.edu.ar/images/logo_blanco.png">
+        <div class="container-row">
+            <p class="navbar-brand" id="title-Unco">COMEDOR UNIVERSITARIO NEUQUEN</p>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <button class="bottom-nav" href="#">Ingresar  <i class="bi bi-box-arrow-in-left"></i></button>
+                </li>
+                <li class="nav-item">
+                    <button class="bottom-nav" href="#">Registrarse  <i class="bi bi-pencil-square"></i></button>
+                </li>
+                <li class="nav-item">
+                    <button id="back" class="bottom-nav">Volver a Inicio <i class="bi bi-chevron-double-right"></i></i></button>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <div class="container-menus">
-        <h3 id="time-foods">Lunes 10/10/2022</h3>
-        <div class="container-row">
-            <button id="clickeable">
-                <div class="little-box">
-                    <img class="small-image" alt="Imagen del menu" src="https://assets.unileversolutions.com/recipes-v2/209413.jpg">
-                    <div class="little-box-title">
-                        <h4 id="little-title-style">Et voluptate et nostrud eiusmod</h4>
-                    </div>
-                </div>
-            </button>
-            <div class="little-box">
-                <img class="small-image" alt="Imagen del menu" src="https://assets.unileversolutions.com/recipes-v2/209413.jpg">
-                <div id="clickeable" class="little-box-title">
-                    <h4 id="little-title-style">Et voluptate et nostrud eiusmod</h4>
-                </div>
-            </div>
-        </div>
-        <h3 id="time-foods">Martes: 11/10/2022</h3>
-        <div class="container-row">
-            <button id="clickeable">
-                <div class="little-box">
-                    <img class="small-image" alt="Imagen del menu" src="https://assets.unileversolutions.com/recipes-v2/209413.jpg">
-                    <div class="little-box-title">
-                        <h4 id="little-title-style">Et voluptate et nostrud eiusmod</h4>
-                    </div>
-                </div>
-            </button>
-            <div class="little-box">
-                <img class="small-image" alt="Imagen del menu" src="https://assets.unileversolutions.com/recipes-v2/209413.jpg">
-                <div id="clickeable" class="little-box-title">
-                    <h4 id="little-title-style">Et voluptate et nostrud eiusmod</h4>
-                </div>
-            </div>
-        </div>
+      
     </div>
-        
-        <footer class="contact">Datos de Contacto</div>
+    <div>
+      <p id="back" class ="next-meals"></p>
+    </div>
+
+    <footer class="text-center text-lg-start bg-dark text-muted">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+          <!-- Left -->
+          <div class="me-5 d-none d-lg-block">
+            <span style="font-size: 1.2vw;">Nos puedes contactar por: </span>
+          </div>
+          <!-- Left -->
+      
+          <!-- Right -->
+          <div style="font-size: 1vw;">
+            <a href="" class="me-4 link-secondary">
+              <i class="bi bi-envelope"></i>
+            </a>
+            <a href="" class="me-4 link-secondary">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="" class="me-4 link-secondary">
+              <i class="bi bi-whatsapp"></i>
+            </a>
+            <a href="" class="me-4 link-secondary">
+              <i class="bi bi-instagram"></i>
+            </a>
+          </div>
+          <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+      
+        <!-- Section: Links  -->
+        <section class="">
+          <div class="container text-center text-md-start mt-5">
+            <!-- Grid row -->
+            <div class="row mt-3">
+              <!-- Grid column -->
+              <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                <!-- Content -->
+                <h6 class="text-uppercase fw-bold mb-4">
+                  <i class="fas fa-gem me-3 text-secondary"></i>Universidad Nacional del Comahue 
+                </h6>
+                <p>
+                Ofreciendo un amplio rango de enseñanza de calidad superior y actividades extra curriculares.
+                </p>
+              </div>
+              <!-- Grid column -->
+      
+              <!-- Grid column ESTO FUE MAS RELLENO QUE OTRA COSA -->
+              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                <!-- Links -->
+                <h6 class="text-uppercase fw-bold mb-4">
+                  Subsecretaria de Bienestar
+                </h6>
+                <p>
+                  <a href="#!" class="text-reset">Becas</a>
+                </p>
+                <p>
+                  <a href="#!" class="text-reset">Deportes</a>
+                </p>
+                <p>
+                  <a href="#!" class="text-reset">Intervecion institucional</a>
+                </p>
+                <p>
+                  <a href="#!" class="text-reset">Asistencia Psicopedagógica</a>
+                </p>
+              </div>
+              <!-- Grid column -->
+      
+              <!-- Grid column -->
+              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                <!-- Links -->
+                <h6 class="text-uppercase fw-bold mb-4">Direccion</h6>
+                <p><i class="fas fa-home me-3 text-secondary"></i> Avenida Argentina 1525, Neuquén</p>
+              </div>
+              <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+          </div>
+        </section>
+        <!-- Section: Links  -->
+        <!-- Grid container -->
+    <script type="module" src="proxComidas.js"></script>
 </body>
 </html>

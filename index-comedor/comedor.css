@@ -81,7 +81,7 @@ body{
     top: 0;
     right: -20px;
     transition: 0.5s;
-  }
+}
 
 /*Imagen de fondo del menu*/
 .background-img-menu{
@@ -290,17 +290,8 @@ body{
     margin-top: -6vh;
     font-family: 'Bevan';
     position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 3em;
-	letter-spacing:0.1em;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 3px;
-  -webkit-text-stroke-color: white;
-  text-shadow:  5px 5px #ff1f8f,
-				10px 10px #000000;
 }
+
 
 
 .large-menu-paragraph{
@@ -314,7 +305,6 @@ body{
     font-weight: 800;
     text-align: right;
     margin-right: 20px;
-    backdrop-filter: blur(0px);
 }
 
 #button-to-reserve {
