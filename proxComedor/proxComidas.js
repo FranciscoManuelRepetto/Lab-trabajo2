@@ -41,12 +41,16 @@ for (let index = 0; index < sizeHistorial; index++) {
             let littleBox = document.createElement("div");
             littleBox.classList.add("little-box-"+(j+1));
             column.appendChild(littleBox);
+
+            let boxImgTitle = document.createElement("div");
+            boxImgTitle.classList.add("little-box");
+            littleBox.appendChild(boxImgTitle);
             
             let image = document.createElement("img");
             image.classList.add("small-image");
             image.alt = "Imagen del menu "+toGenerate[i][j].nombre;
             image.src = toGenerate[i][j].foto;
-            littleBox.appendChild(image);
+            boxImgTitle.appendChild(image);
 
             let titleBox = document.createElement("div");
             titleBox.classList.add("little-box-title");
@@ -55,7 +59,7 @@ for (let index = 0; index < sizeHistorial; index++) {
             title.id = "little-title-style";
             title.textContent = toGenerate[i][j].nombre;
             titleBox.appendChild(title);
-            littleBox.appendChild(titleBox);
+            boxImgTitle.appendChild(titleBox);
         }
         containerRow.appendChild(column);
         container.appendChild(containerRow);

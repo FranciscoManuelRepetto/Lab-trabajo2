@@ -124,9 +124,11 @@ body{
 
 .container-row-food{
     display: flex;
+    flex-wrap:wrap;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    margin-bottom: 3em; 
 }
 
 /*Eslogan*/
@@ -157,48 +159,54 @@ body{
     font-weight: 500;
 }
 
+#clickeable{
+    margin: 2em;
+    background-color: white;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #2d3748;
+    border: 0.2em solid #cbd5e0;
+    line-height: 26px;
+    box-shadow:
+        0 1px 3px 0 rgba(0,0,0,.1),
+        0 1px 2px 0 rgba(0,0,0,.06);
+}
+
+#clickeable:hover, 
+#clickeable:focus {
+  animation: border-effect 1s;
+  box-shadow: 0 0 0 2em transparent;
+}
+
+@keyframes border-effect {
+  0% { box-shadow: 0 0 0 0 #6eb3ef; }
+}
+
 
 .little-box{
     position: relative;
-    display: inline-block;
+    display: inline-table;
     text-align: center;
+    min-width: 500px;
+    min-height: 300px;
     max-height: 40vh;
     max-width: 40vw;
     overflow: hidden;
 }
 
-.little-box-title{
-    max-height: 100%;
-    max-width: 100%;
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    transform: translate(-80%, -50%);
-}
-
 #little-title-style{
-    color: antiquewhite;
-    text-shadow: 4px 4px 2px black;
+    font-family: "Helvetica";
+    font-weight: 800;
+    font-size: 3vh;
+    text-transform: uppercase;
 }
 
 .small-image{
+    min-width: 100%;
+    min-height: 100%;
     max-height: 100%;
     max-width: 100%;
-}
-
-@media (max-width: 955px){
-    #little-title-style{
-        font-size: 0.5vw;
-    }
-
-    .little-box-title{
-        max-height: 100%;
-        max-width: 100%;
-        position: absolute;
-        top: 70%;
-        left: 50%;
-        transform: translate(-70%, -50%);
-    }
 }
 
 /*Proximas comidas*/
@@ -251,14 +259,21 @@ body{
 /*ESTILO DEL MENU AMPLIADO*/
 
 .big-image{
-    width: 900px;
+    width: 100%;
     height: 350px;
     margin: auto;
     z-index: 4;
 }
 
+.fix-image-title{
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
 .large-menu-box{
     overflow: hidden;
+    display: inline-table;
     position: fixed;
     z-index: 4;
     top: 0;
@@ -266,34 +281,37 @@ body{
     right: 0;
     bottom: 0;
     margin: auto;
-    width: 900px;
-    height: 680px;
     font-size: 0.40cm;
     background: rgba(179, 179, 179, 0.2);
     border-radius: 16px;
     box-shadow: 10px 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(50px);
     border: 1px solid rgba(255, 255, 255, 0.3);
+    min-width: 300px;
+    min-height: 480px;
+    width: 100%;
+    height: 100%;
+    max-width: 900px;
+    max-height: 680px;
 }
 
 .big-menu-title{
-    bottom:35vh;
     position: absolute;
     color: #CEF0D4; 
     font-family: 'Rouge Script',  cursive; 
-    font-size: 4vw; 
+    font-size: 72px; 
     font-weight: 700; 
     line-height: 48px; 
     margin: 0 0 2vw 2.5vw; 
     text-align: center; 
     text-shadow: 1px 1px 2px #082b34;
+    bottom: 8px;
+    left: 16px;
 }
-
-
 
 .large-menu-paragraph{
     color: white; 
-    font-size: 1.5vw; 
+    font-size: 20pt; 
     font-family: "Libre Baskerville", serif;
     font-weight: 500;
     line-height: 30px; 
@@ -351,38 +369,44 @@ body{
 
 #like-button {
   align-items: center;
-  appearance: none;
-  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+  background-image:
+    radial-gradient(100% 100% at 100% 0,
+                    #5adaff 0,
+                    #5468ff 100%);
   border: 0;
   border-radius: 6px;
-  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  box-shadow:
+    rgba(45, 35, 66, .4) 0 2px 4px,
+    rgba(45, 35, 66, .3) 0 7px 13px -3px
+    rgba(58, 65, 111, .5) 0 -3px 0 inset;
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
   display: inline-flex;
   height: 48px;
   justify-content: center;
-  line-height: 1;
-  list-style: none;
   overflow: hidden;
   padding-left: 16px;
   padding-right: 16px;
   position: relative;
   text-align: left;
-  text-decoration: none;
   transition: box-shadow .15s,transform .15s;
-  touch-action: manipulation;
-  white-space: nowrap;
-  will-change: box-shadow,transform;
   font-size: 18px;
 }
 
 #like-button:focus {
-  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  box-shadow:
+    #3c4fe0 0 0 0 1.5px inset,
+    rgba(45, 35, 66, .4) 0 2px 4px,
+    rgba(45, 35, 66, .3) 0 7px 13px -3px,
+    #3c4fe0 0 -3px 0 inset;
 }
 
 #like-button:hover {
-  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  box-shadow:
+    rgba(45, 35, 66, .4) 0 4px 8px,
+    rgba(45, 35, 66, .3) 0 7px 13px -3px,
+    #3c4fe0 0 -3px 0 inset;
   transform: translateY(-2px);
 }
 

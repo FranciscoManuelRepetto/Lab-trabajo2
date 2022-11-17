@@ -7,63 +7,11 @@ foodElem.forEach((elem) => {
     elemts.push(elem);
 });
 
-const buildTodayDate = () => {
-    let today = new Date();
-    let dd = String(today.getDate()).padStart(2, '0');
-    let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    let yyyy = today.getFullYear();
-    today = dd + '/' + mm + '/' + yyyy;
-    return today;
-}
-
-let today = buildTodayDate();
-
-/* Block scroll
-const keys = {37: 1, 38: 1, 39: 1, 40: 1};
-
-function preventDefault(e) {
-  e.preventDefault();
-}
-
-function preventDefaultForScrollKeys(e) {
-  if (keys[e.keyCode]) {
-    preventDefault(e);
-    return false;
-  }
-}
-
-let supportsPassive = false;
-try {
-  window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
-    get: function () { supportsPassive = true; } 
-  }));
-} catch(e) {}
-
-let wheelOpt = supportsPassive ? { passive: false } : false;
-let wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
-
-
-// call this to Disable
-function disableScroll() {
-    window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
-    window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
-    window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
-    window.addEventListener('keydown', preventDefaultForScrollKeys, false);
-}
-  
-// call this to Enable
-function enableScroll() {
-    window.removeEventListener('DOMMouseScroll', preventDefault, false);
-    window.removeEventListener(wheelEvent, preventDefault, wheelOpt); 
-    window.removeEventListener('touchmove', preventDefault, wheelOpt);
-    window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
-}
-*/
 function aparecerModal(name, number) {
     document.body.style.overflow = "hidden";
 
     let elem = menus[name][number];
-    let countElems = 5;
+    let countElems = 4;
     let elements = new Array(countElems);
 
     let hiderBack = document.createElement("div");
@@ -74,18 +22,24 @@ function aparecerModal(name, number) {
     bigBox.classList.add("large-menu-box");
 
     //Create a image
-    elements[0] = document.createElement("img");
-    elements[0].classList.add("big-image");
-    elements[0].alt = "Imagen del menu: "+elem.nombre;
-    elements[0].src = elem.foto;
+    let imageGrande = document.createElement("img");
+    imageGrande.classList.add("big-image");
+    imageGrande.alt = "Imagen del menu: "+elem.nombre;
+    imageGrande.src = elem.foto;
 
-    elements[1] = document.createElement("h4");
-    elements[1].classList.add("big-menu-title");
-    elements[1].innerHTML = elem.nombre;
+    let bigTitle = document.createElement("h4");
+    bigTitle.classList.add("big-menu-title");
+    bigTitle.innerHTML = elem.nombre;
 
-    elements[2] = document.createElement("p");
-    elements[2].classList.add("large-menu-paragraph");
-    elements[2].innerHTML = elem.ingredientes;
+    elements[0] = document.createElement("div");
+    elements[0].classList.add("fix-image-title");
+    elements[0].appendChild(imageGrande);
+    elements[0].appendChild(bigTitle);
+
+
+    elements[1] = document.createElement("p");
+    elements[1].classList.add("large-menu-paragraph");
+    elements[1].innerHTML = elem.ingredientes;
 
     let priceContainer = document.createElement("div");
 
@@ -116,14 +70,14 @@ function aparecerModal(name, number) {
     likeIcon.classList.add("bi-hand-thumbs-up-fill");
     likeButton.appendChild(likeIcon);
 
-    elements[3] = document.createElement("div");
-    elements[3].classList.add("container-row-buttons");
-    elements[3].appendChild(likeButton);
-    elements[3].appendChild(reserveButton);
-    elements[3].appendChild(priceContainer);
+    elements[2] = document.createElement("div");
+    elements[2].classList.add("container-row-buttons");
+    elements[2].appendChild(likeButton);
+    elements[2].appendChild(reserveButton);
+    elements[2].appendChild(priceContainer);
     
-    elements[4] = document.createElement("button");
-    elements[4].id = "close";
+    elements[3] = document.createElement("button");
+    elements[3].id = "close";
     
     
     for(let i=0;i<countElems;i++){
