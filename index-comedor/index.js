@@ -44,15 +44,15 @@ function aparecerModal(name, number) {
     let priceContainer = document.createElement("div");
 
     let reserve = document.createElement("p");
-    reserve.classList.add("reserve");
+    reserve.classList.add("info-coupon");
     reserve.innerHTML = "Cantidad de Cupones: "+elem.reservas;
 
     let price = document.createElement("p");
-    price.classList.add("price");
+    price.classList.add("info-coupon");
     price.innerHTML = "Precio: "+elem.precio;
 
     let cardPrice = document.createElement("p");
-    cardPrice.classList.add("price");
+    cardPrice.classList.add("info-coupon");
     cardPrice.innerHTML = "Precio Carnet: "+elem.precio;
 
     priceContainer.appendChild(reserve);

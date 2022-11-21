@@ -5,7 +5,15 @@ const buildDate = (fecha) => {
     let mm = fecha.month;
     let yyyy = fecha.year;
     let today = dd + '/' + mm + '/' + yyyy;
+    let aux = yyyy+'-'+mm+'-'+dd+' 00:00:00';
+    today = obtenerDiaSeamana(aux)+' '+today;
     return today;
+}
+
+function obtenerDiaSeamana(fecha){
+    const dias = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado',];
+    const numeroDia = new Date(fecha).getDay();
+    return dias[numeroDia];
 }
 
 let option = ["desayunos", "almuerzos", "meriendas"];
@@ -33,7 +41,7 @@ for (let index = 0; index < sizeHistorial; index++) {
         column.classList.add("column");
 
         let name = document.createElement("h4");
-        name.classList.add("name");
+        name.classList.add("meal");
         name.textContent = option[i];
         column.appendChild(name);
 

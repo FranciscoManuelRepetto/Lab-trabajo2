@@ -13,12 +13,12 @@ body{
 
 /*Encabezado*/
 #title-Unco{
-    font-size: 2vw;
+    font-size: 40px;
     font-weight: 800;
     font-family: "Lucida Console", Courier, monospace;
-    margin-left: 2vw;
+    margin-left: 1vw;
     margin-top: 1vw;
-    margin-bottom: -10px;
+    margin-bottom: 1vh;
 }
 
 @media (max-width: 1000px) {
@@ -29,10 +29,9 @@ body{
         margin-left: 0vw;
     }
 
-    .logo-Unco{
+.logo-Unco{
         width: 10vw;
         height: 10vw;
-        margin-right: 12vw;
     }
 }
 
@@ -46,8 +45,7 @@ body{
 .logo-Unco{
     width: 4vw;
     height: 4vw;
-    margin-left: 1vw;
-    margin-right: 12vw;
+    margin-left: 2vw;
 }
 
 #navbarNav{
@@ -59,7 +57,7 @@ body{
 .bottom-nav{
     border: none;
     cursor: pointer;
-    font-size: 1vw;
+    font-size: 17px;
     font-weight: 600;
     padding: 0.5rem 1.5rem;
     margin: 1rem;
@@ -136,20 +134,17 @@ body{
     display: flex;
     justify-content: center;
     color: white;
-    font-weight: 600;
-    padding: 2vw;
+    font-weight: 600px;
+    font-size: 40px;
+    top: 3vh;
 }
 
 .people-eat{
     filter: brightness(0%);
-    width: 20vw;
-    height: 20vw;
+    width: 30vw;
+    height: 30vw;
 }
 
-.fork{
-    width: 20vw;
-    height: 20vw;
-}
 
 /*Menu de desayuno,almuerzo,merienda*/
 #time-foods{
@@ -198,8 +193,10 @@ body{
 #little-title-style{
     font-family: "Helvetica";
     font-weight: 800;
-    font-size: 3vh;
+    font-size: 23px;
     text-transform: uppercase;
+    padding: 0;
+    margin: auto;
 }
 
 .small-image{
@@ -276,7 +273,7 @@ body{
     display: inline-table;
     position: fixed;
     z-index: 4;
-    top: 0;
+    top: 6vh;
     left: 0;
     right: 0;
     bottom: 0;
@@ -296,17 +293,13 @@ body{
 }
 
 .big-menu-title{
-    position: absolute;
-    color: #CEF0D4; 
-    font-family: 'Rouge Script',  cursive; 
-    font-size: 72px; 
+    font-family: 'Arial'; 
+    font-size: 45px; 
     font-weight: 700; 
     line-height: 48px; 
-    margin: 0 0 2vw 2.5vw; 
+    margin-top: 1vh; 
     text-align: center; 
     text-shadow: 1px 1px 2px #082b34;
-    bottom: 8px;
-    left: 16px;
 }
 
 .large-menu-paragraph{
@@ -318,25 +311,15 @@ body{
     padding: 1vh 1vw 2vh 1vw;
 }
 
-.reserve{
+.info-coupon{
     color: #a7e8f8;
     font-family: 'Julius Sans One', sans-serif;
-    font-size: 1.2vw;
+    font-size: 26px;
     font-weight: bold;
     text-shadow: 1px 1px 1px #082b34;
     text-align: right;
     margin-right: 20px;
     backdrop-filter: blur(0px);
-}
-
-.price{
-    margin-top: -1vh;
-    color: rgb(4, 123, 197);
-    font-size: 1.7em;
-    font-family: Vegur, 'PT Sans', Verdana, sans-serif;
-    font-weight: 800;
-    text-align: right;
-    margin-right: 20px;
 }
 
 #button-to-reserve {
@@ -424,7 +407,7 @@ body{
     top: 0px;
     width: 32px;
     height: 32px;
-    opacity: 0.3;
+    opacity: 0.6;
 }
 #close:hover {
     opacity: 1;
@@ -445,8 +428,8 @@ body{
 }
 
 .container-row-buttons{
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 40px;
+    padding-right: 40px;
     display: flex;
     flex-direction: row;
     align-items: center;
