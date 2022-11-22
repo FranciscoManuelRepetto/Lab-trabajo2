@@ -35,11 +35,16 @@ body{
     }
 }
 
+/*Clase para centrar elementos*/
+.center{
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
 .container-row{
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
 }
 
 .logo-Unco{
@@ -96,23 +101,24 @@ body{
     opacity: 0.9;
 }
 
+/*Eslogan*/
+.tip{
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-weight: 600px;
+    font-size: 40px;
+    top: 3vh;
+}
+
 /*Contenedor del titulo de comida hoy*/
 .title-menu-today{
     display: flex;
-    align-items: center;
-    justify-content: center;
     height: 100px;
     max-width: 100%;
     color: white;
     font-weight: 600;
-    font-size: 3.5vw;
-}
-
-.container-row{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    font-size: 70px;
 }
 
 /*Contenedor de las comidas*/
@@ -124,21 +130,11 @@ body{
     display: flex;
     flex-wrap:wrap;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
     margin-bottom: 3em; 
 }
 
-/*Eslogan*/
-.tip{
-    display: flex;
-    justify-content: center;
-    color: white;
-    font-weight: 600px;
-    font-size: 40px;
-    top: 3vh;
-}
 
+/*Silueta de las personas comiendo*/
 .people-eat{
     filter: brightness(0%);
     width: 30vw;
@@ -262,6 +258,31 @@ body{
     z-index: 4;
 }
 
+@media (max-width: 1000px) {
+    .big-image{
+        width: 0%;
+        height:0%
+    }
+
+    .large-menu-box{
+        width: 60%;
+        height: 60%;
+        max-width: 900px;
+        max-height: 680px;
+    }
+
+    .big-menu-title{
+        font-size: 20px;
+    }
+
+    .large-menu-paragraph{
+        font-size: 20px; 
+    }
+    
+
+
+}
+
 .fix-image-title{
     position: relative;
     text-align: center;
@@ -273,7 +294,7 @@ body{
     display: inline-table;
     position: fixed;
     z-index: 4;
-    top: 6vh;
+    top: 10vh;
     left: 0;
     right: 0;
     bottom: 0;
@@ -304,13 +325,14 @@ body{
 
 .large-menu-paragraph{
     color: white; 
-    font-size: 20pt; 
+    font-size: 30px; 
     font-family: "Libre Baskerville", serif;
     font-weight: 500;
     line-height: 30px; 
     padding: 1vh 1vw 2vh 1vw;
 }
 
+/*Informacion de cada menu sobre los cupones*/
 .info-coupon{
     color: #a7e8f8;
     font-family: 'Julius Sans One', sans-serif;
