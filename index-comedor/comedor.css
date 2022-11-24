@@ -13,26 +13,12 @@ body{
 
 /*Encabezado*/
 #title-Unco{
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 800;
     font-family: "Lucida Console", Courier, monospace;
     margin-left: 1vw;
     margin-top: 1vw;
     margin-bottom: 1vh;
-}
-
-@media (max-width: 1000px) {
-    #title-Unco{
-        font-size: 20px;
-        font-weight: 800;
-        font-family: "Lucida Console", Courier, monospace;
-        margin-left: 0vw;
-    }
-
-.logo-Unco{
-        width: 10vw;
-        height: 10vw;
-    }
 }
 
 /*Clase para centrar elementos*/
@@ -82,7 +68,6 @@ body{
     position: absolute;
     opacity: 0;
     top: 0;
-    right: -20px;
     transition: 0.5s;
 }
 
@@ -164,8 +149,7 @@ body{
         0 1px 2px 0 rgba(0,0,0,.06);
 }
 
-#clickeable:hover, 
-#clickeable:focus {
+#clickeable:hover{
   animation: border-effect 1s;
   box-shadow: 0 0 0 2em transparent;
 }
@@ -258,31 +242,6 @@ body{
     z-index: 4;
 }
 
-@media (max-width: 1000px) {
-    .big-image{
-        width: 0%;
-        height:0%
-    }
-
-    .large-menu-box{
-        width: 60%;
-        height: 60%;
-        max-width: 900px;
-        max-height: 680px;
-    }
-
-    .big-menu-title{
-        font-size: 20px;
-    }
-
-    .large-menu-paragraph{
-        font-size: 20px; 
-    }
-    
-
-
-}
-
 .fix-image-title{
     position: relative;
     text-align: center;
@@ -294,7 +253,7 @@ body{
     display: inline-table;
     position: fixed;
     z-index: 4;
-    top: 10vh;
+    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
@@ -305,17 +264,15 @@ body{
     box-shadow: 10px 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(50px);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    min-width: 300px;
-    min-height: 480px;
     width: 100%;
     height: 100%;
     max-width: 900px;
-    max-height: 680px;
+    max-height: 650px;
 }
 
 .big-menu-title{
     font-family: 'Arial'; 
-    font-size: 45px; 
+    font-size: 40px; 
     font-weight: 700; 
     line-height: 48px; 
     margin-top: 1vh; 
@@ -336,7 +293,7 @@ body{
 .info-coupon{
     color: #a7e8f8;
     font-family: 'Julius Sans One', sans-serif;
-    font-size: 26px;
+    font-size: 25px;
     font-weight: bold;
     text-shadow: 1px 1px 1px #082b34;
     text-align: right;
@@ -355,7 +312,7 @@ body{
     color: white;
     border-radius: 15px;
     float: right;
-  }
+}
 
 #button-to-reserve:hover {
     background-color:rgb(2, 67, 107)
@@ -462,7 +419,90 @@ body{
     position:fixed;
     width:100%;
     height:100%;
-    opacity:0.5;
+    opacity:0.8;
     z-index:1;
     background:#000;
+}
+
+
+@media (max-width: 1000px){
+    #title-Unco{
+        font-size: 20px;
+        font-weight: 800;
+        font-family: "Lucida Console", Courier, monospace;
+        margin-left: 0vw;
+    }
+
+    .logo-Unco{
+        width: 10vw;
+        height: 10vw;
+    }
+}
+
+@media (max-width: 1000px) and (min-width: 550px) {
+    .large-menu-box{
+        width: 100%;
+        height: 30%;
+    }
+
+    .big-image{
+        width: 0%;
+        height:0%
+    }
+
+    .big-menu-title{
+        font-size: 30px;
+    }
+
+    .large-menu-paragraph{
+        font-size: 20px; 
+    }
+
+    .info-coupon{
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 550px){
+    .large-menu-box{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 60%;
+        max-width: 550px;
+    }
+
+    .big-image{
+        width: 0%;
+        height:0%
+    }
+
+    .big-menu-title{
+        font-size: 20px;
+    }
+
+    .large-menu-paragraph{
+        font-size: 10px; 
+    }
+
+    .info-coupon{
+        font-size: 10px;
+    }
+
+    .container-row-buttons{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 495px){
+    .large-menu-box{
+        overflow: scroll;
+    }
+}
+@media (max-width: 315px){
+    #button-to-reserve {
+        width: 125px;
+        height: 50px;
+        font-size: 20px;
+    }
 }
