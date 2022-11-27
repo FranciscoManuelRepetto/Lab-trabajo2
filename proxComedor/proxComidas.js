@@ -1,16 +1,16 @@
 import historial from '../historial.json' assert { type:'json' };
 
-const buildDate = (fecha) => {
+const createdate = (fecha) => {
     let dd = fecha.day;
     let mm = fecha.month;
     let yyyy = fecha.year;
     let today = dd + '/' + mm + '/' + yyyy;
     let aux = yyyy+'-'+mm+'-'+dd+' 00:00:00';
-    today = obtenerDiaSeamana(aux)+' '+today;
+    today = getWeekDay(aux)+' '+today;
     return today;
 }
 
-function obtenerDiaSeamana(fecha){
+function getWeekDay(fecha){
     const dias = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado',];
     const numeroDia = new Date(fecha).getDay();
     return dias[numeroDia];
@@ -28,7 +28,7 @@ for (let index = 0; index < sizeHistorial; index++) {
 
     let titulo = document.createElement("h3");
     titulo.id = "date-food";
-    titulo.textContent = buildDate(foodDay.fecha);
+    titulo.textContent = createdate(foodDay.fecha);
     container.appendChild(titulo);
 
     let containerRow = document.createElement("section");
