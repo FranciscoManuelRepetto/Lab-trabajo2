@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <title>Proximas Comidas</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta lang="es">
     <link rel="stylesheet" href="proxComidas.css">
     <!--Los siguientes links son de bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -13,10 +15,11 @@
 </head>
 
 <body>
+  <header>
     <nav class="navbar nav-fill navbar-expand-xxl navbar-dark bg-dark">
         <img class="logo-Unco" alt="Logo de la universidad nacional del comahue" src="https://web.curza.uncoma.edu.ar/images/logo_blanco.png">
         <div class="container-row">
-            <p class="navbar-brand" id="title-Unco">COMEDOR UNIVERSITARIO NEUQUEN</p>
+            <p class="navbar-brand" id="title-Unco">COMEDOR UNIVERSITARIO</p>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -35,13 +38,12 @@
             </ul>
         </div>
     </nav>
+  </header>
     <div class="background-img-menu">
       <div id="darken-background">
         <h2 class="title-menu-nextMeals"> ¡Comidas de los próximos días!</h2>
         <div class="container-menus"></div>
-        <div>
-          <p id="back" class ="next-meals"></p>
-      </div>
+        <p id="back" class ="next-meals"></p>
     </div>
     </div>
     <footer class="text-center text-lg-start bg-dark text-muted">

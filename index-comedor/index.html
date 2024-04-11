@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta lang="es">
-        <link rel="stylesheet" href="comedor.css">
+        <link rel="stylesheet" href="index.css">
         <!--Los siguientes links son de bootstrap-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
@@ -15,33 +15,37 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </head>
     <body>
-        <nav class="navbar navbar-expand-xxl navbar-dark bg-dark">
-            <img class="logo-Unco" alt="Logo de la universidad nacional del comahue" src="https://web.curza.uncoma.edu.ar/images/logo_blanco.png">
-            <div class="container-row">
-                <p class="navbar-brand" id="title-Unco">COMEDOR UNIVERSITARIO NEUQUEN</p>
-            </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <button class="bottom-nav" href="#">Ingresar<i class="bi bi-box-arrow-in-left"></i></button>
-                    </li>
-                    <li class="nav-item">
-                        <button class="bottom-nav" href="#">Registrarse<i class="bi bi-pencil-square"></i></button>
-                    </li>
-                    <li class="nav-item">
-                        <button id="next-meal" class="bottom-nav">Proximas Comidas<i class="bi bi-chevron-double-right"></i></i></button>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        <header>
+          <nav class="navbar nav-fill navbar-expand-xxl navbar-dark bg-dark">
+              <img class="logo-Unco" alt="Logo de la universidad nacional del comahue" src="https://web.curza.uncoma.edu.ar/images/logo_blanco.png">
+              <div class="container-row">
+                  <p class="navbar-brand" id="title-Unco">COMEDOR UNIVERSITARIO</p>
+              </div>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <button class="buton-nav" href="#">Ingresar<i class="bi bi-box-arrow-in-left"></i></button>
+                      </li>
+                      <li class="nav-item">
+                        <button class="buton-nav" href="#">Registrarse<i class="bi bi-pencil-square"></i></button>
+                      </li>
+                      <li class="nav-item">
+                        <button id="next-meal" class="buton-nav">Proximas Comidas<i class="bi bi-chevron-double-right"></i></i></button>
+                      </li>
+                  </ul>
+              </div>
+          </nav>
+        </header>
         <div class="background-img-menu">
             <div id="darken-background">
-                <h3 class="tip">¡Reserva tu menu para hoy y disfruta de los mejores menus!</h3>
+                <div class="tip">
+                  <h3 class="tip-text">¡Reserva tu menu para hoy y disfruta de los mejores menus!</h3>
+                </div>  
                 <div class="container-row center">
-                    <img class="people-eat" alt="Siluetas Personas Comiendo" src="..\images\siluetaPersonas.png">;
+                    <img class="people-eat" alt="Siluetas Personas Comiendo" src="..\images\siluetaPersonas.png">
                 </div>
                 <h2 class="title-menu-today center">Comida de Hoy</h2>
                 <div class="container-menus">
@@ -71,7 +75,7 @@
               <!-- Left -->
           
               <!-- Right -->
-              <div style="font-size: 1vw;">
+              <div class="footer-logo-container">
                 <a href="" class="me-4 link-secondary">
                   <i class="bi bi-envelope"></i>
                 </a>

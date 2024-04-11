@@ -1,88 +1,60 @@
-import historial from '../historial.json' assert { type:'json' };
+import historial from '../historial.json' with { type:'json' };
+import {addFunctionRefButton, buildDate} from '../services/services.js' 
 
-const buildDate = (fecha) => {
-    let dd = fecha.day;
-    let mm = fecha.month;
-    let yyyy = fecha.year;
-    let today = dd + '/' + mm + '/' + yyyy;
-    let aux = yyyy+'-'+mm+'-'+dd+' 00:00:00';
-    today = obtenerDiaSeamana(aux)+' '+today;
-    return today;
-}
+const container = document.querySelector('.container-menus');
 
-function obtenerDiaSeamana(fecha){
-    const dias = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado',];
-    const numeroDia = new Date(fecha).getDay();
-    return dias[numeroDia];
-}
-
-let option = ["desayunos", "almuerzos", "meriendas"];
-let sizeHistorial = historial.length;
-let container = document.querySelector('.container-menus');
-
-for (let index = 0; index < sizeHistorial; index++) {
-    let foodDay = historial[index];
-
-    let toGenerate = [foodDay.desayunos, foodDay.almuerzos, foodDay.meriendas];
-    let sizeGenerate = toGenerate.length;
-
-    let titulo = document.createElement("h3");
+historial.forEach((menu) => {
+    const titulo = document.createElement("h3");
     titulo.id = "date-food";
-    titulo.textContent = buildDate(foodDay.fecha);
+    titulo.textContent = buildDate(menu.fecha);
     container.appendChild(titulo);
 
-    let containerRow = document.createElement("section");
+    const containerRow = document.createElement("section");
     containerRow.classList.add("container-row");
-    containerRow.classList.add("space-box");    
+    containerRow.classList.add("space-box");
 
-    for (let i = 0; i < sizeGenerate; i++) {
-        
-        let column = document.createElement("div");
+    const timeFoodSet = Object.keys(menu).splice(1);
+    
+    timeFoodSet.forEach((foodTime) => {
+        const column = document.createElement("div");
         column.classList.add("column");
 
-        let name = document.createElement("h4");
+        const name = document.createElement("h4");
         name.classList.add("meal");
-        name.textContent = option[i];
+        name.textContent = foodTime.charAt(0).toUpperCase() + foodTime.slice(1);
         column.appendChild(name);
 
-        for (let j = 0; j < 2; j++) {
-            let littleBox = document.createElement("div");
-            littleBox.classList.add("little-box-"+(j+1));
+        const foodSet = Object.values(menu[foodTime]);
+        foodSet.forEach ((food, index) => {
+            const littleBox = document.createElement("div");
+            littleBox.classList.add("little-box-"+(index+1));
             column.appendChild(littleBox);
 
-            let boxImgTitle = document.createElement("div");
+            const boxImgTitle = document.createElement("div");
             boxImgTitle.classList.add("little-box");
             littleBox.appendChild(boxImgTitle);
             
-            let image = document.createElement("img");
+            const image = document.createElement("img");
             image.classList.add("small-image");
-            image.alt = "Imagen del menu "+toGenerate[i][j].nombre;
-            image.src = toGenerate[i][j].foto;
+            image.alt = "Imagen del menu "+food.nombre;
+            image.src = food.foto;
             boxImgTitle.appendChild(image);
 
-            let titleBox = document.createElement("div");
+            const titleBox = document.createElement("div");
             titleBox.classList.add("little-box-title");
 
-            let title = document.createElement("h5");
+            const title = document.createElement("h5");
             title.id = "little-title-style";
-            title.textContent = toGenerate[i][j].nombre;
+            title.textContent = food.nombre;
             titleBox.appendChild(title);
             boxImgTitle.appendChild(titleBox);
-        }
+        });
         containerRow.appendChild(column);
         container.appendChild(containerRow);
-    }
-}
+    });
+});
 
-let elemntsBack = document.querySelectorAll('#back');
-let buttonsBack = [];
+const elemntsBack = document.querySelectorAll('#back');
 elemntsBack.forEach((elem) => {
-    buttonsBack.push(elem);
-});
-
-buttonsBack[0].addEventListener('click', () => {
-    location.href = "../index-comedor/index.html";
-});
-buttonsBack[1].addEventListener('click', () => {
-    location.href = "../index-comedor/index.html";
+    addFunctionRefButton(elem, "../index-comedor/index.html");
 });
