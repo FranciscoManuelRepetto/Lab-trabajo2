@@ -121,7 +121,6 @@ body{
 
 /*Silueta de las personas comiendo*/
 .people-eat{
-    filter: brightness(0%);
     width: 30vw;
     height: 30vw;
 }
