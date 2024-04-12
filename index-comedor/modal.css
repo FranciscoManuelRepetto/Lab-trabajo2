@@ -29,8 +29,6 @@
     box-shadow: 10px 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(50px);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    width: 100%;
-    height: 100%;
     max-width: 900px;
     max-height: 650px;
 }
@@ -62,8 +60,10 @@
     font-weight: bold;
     text-shadow: 1px 1px 1px #082b34;
     text-align: right;
-    margin-right: 20px;
     backdrop-filter: blur(0px);
+    border-radius: 30px;
+    text-align: center;
+    padding: 5px;
 }
 
 #button-to-reserve {
@@ -143,15 +143,15 @@
 }
 
 #close {
-    padding: 0;
+    padding: 0px;
     border: none;
     background: none;
-    position: absolute;
+    position: fixed;
     right: 32px;
     top: 0px;
     width: 32px;
     height: 32px;
-    opacity: 0.6;
+    opacity: 1;
 }
 #close:hover {
     opacity: 1;
@@ -160,8 +160,8 @@
     position: absolute;
     left: 15px;
     content: ' ';
-    height: 33px;
-    width: 2px;
+    height: 50px;
+    width: 20px;
     background-color: #333;
 }
 #close:before {
@@ -181,10 +181,86 @@
 }
 
 #hidden-background{
-    position:fixed;
-    width:100%;
-    height:100%;
-    opacity:0.8;
-    z-index:1;
-    background:#000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    background-color: #000;
+}
+
+@media (max-width: 480px) {
+    /* Estilos para móviles pequeños */
+    * {
+        font-size: 16px;
+    }
+    .large-menu-box{
+        width: 100%;
+        height: 90%;
+    }
+    .big-image{
+        height: 30vh;
+    }
+    .big-menu-title{
+        font-size: 2rem; 
+        font-weight: 700;
+    }
+    .large-menu-paragraph{
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+    .container-row-buttons{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .info-coupon{
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 667px) {
+    /* Estilos para móviles medianos */
+    * {
+        font-size: 18px;
+    }
+    .large-menu-box{
+        width: 100%;
+        height: 90%;
+    }
+    .container-row-buttons{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
+@media (min-width: 668px) and (max-width: 1280px) {
+    /* Estilos para móviles grandes */
+    * {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .large-menu-box{
+        overflow: scroll;
+        overflow-x: hidden;
+        scrollbar-width: thin;
+        display: flex;
+        flex-direction: column;
+        max-width: 900px;
+        max-height: 650px;
+    }
+    #button-to-reserve {
+        width: 100%;
+        max-width: 280px;
+        max-height: 80px;
+        font-size: 2rem;
+    }
 }

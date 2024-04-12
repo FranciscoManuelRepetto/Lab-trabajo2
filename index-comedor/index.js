@@ -1,5 +1,5 @@
 import menus from '../menus.json' with { type:'json' };
-import { addFunctionRefButton } from '../services/services';
+import { addFunctionRefButton } from '../services/services.js';
 
 const rowContainer = document.querySelectorAll('.container-row-food');
 
