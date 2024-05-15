@@ -1,0 +1,314 @@
+@import url("./modal.css");
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    margin: 0px;
+    background-color: rgb(41, 40, 40);
+}
+
+/*Encabezado*/
+#title-Unco{
+    font-size: 40px;
+    font-weight: 800;
+    font-family: "Lucida Console", Courier, monospace;
+    color: #fff;
+    margin-left: 1vw;
+    margin-top: 1vw;
+    margin-bottom: 1vh;
+}
+
+/*Clase para centrar elementos*/
+.center{
+    align-items: center;
+    justify-content: center;
+}
+
+.container-row{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-Unco{
+    width: 5vw;
+    margin-left: 2vw;
+}
+
+.header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap:wrap;
+    flex-direction: row;
+}
+
+#navbarNav{
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+/*Modifica los botones del nav*/
+.buton-nav{
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 0.5rem 1.5rem;
+    margin: 1rem;
+    color: white;
+    border: 2px solid;
+    background:linear-gradient(to right, transparent 50%, white 50%) no-repeat left / 200%;
+    transition: background-position 0.5s ease;   
+}
+.buton-nav:hover{
+    background-position: right; 
+    color: black; 
+    border: 2px solid white;
+}
+
+.buton-nav:after {
+    content: '\00bb';
+    opacity: 0;
+    top: 0;
+    transition: 0.5s;
+}
+
+/*Imagen de fondo del menu*/
+.background-img-menu{
+    background-image: url("https://10619-2.s.cdn12.com/rests/original/104_355872023.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#darken-background{
+    width : 100%;
+	height : 100%;
+    background-color: rgb(41, 40, 40);
+    opacity: 0.9;
+}
+
+/*Eslogan*/
+.tip{
+    display: flex;
+    justify-content: center;
+}
+
+.tip-text{
+    text-align: center;
+    color: white;
+    font-weight: 600px;
+    font-size: 1.8rem;
+    top: 3vh;
+}
+
+/*Contenedor del titulo: Comida de hoy*/
+.title-menu-today{
+    display: flex;
+    height: 100px;
+    max-width: 100%;
+    color: white;
+    font-weight: 600;
+    font-size: 70px;
+}
+
+/*Contenedor de las comidas*/
+.container-menus{
+    margin: 2%
+}
+
+.container-row-food{
+    display: flex;
+    flex-wrap:wrap;
+    flex-direction: row;
+    margin-bottom: 3em; 
+}
+
+
+/*Silueta de las personas comiendo*/
+.people-eat{
+    width: 30vw;
+    height: 30vw;
+}
+
+
+/*Menu de desayuno,almuerzo,merienda*/
+#time-foods{
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-weight: 500;
+    text-align: center;
+}
+
+#clickeable{
+    margin: 2em;
+    background-color: white;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #2d3748;
+    border: 0.2em solid #cbd5e0;
+    line-height: 26px;
+    box-shadow:
+        0 1px 3px 0 rgba(0,0,0,.1),
+        0 1px 2px 0 rgba(0,0,0,.06);
+}
+
+#clickeable:hover{
+  animation: border-effect 1s;
+  box-shadow: 0 0 0 2em transparent;
+}
+
+@keyframes border-effect {
+  0% { box-shadow: 0 0 0 0 #6eb3ef; }
+}
+
+
+.little-box{
+    position: relative;
+    display: inline-table;
+    text-align: center;
+    min-width: 20px;
+    min-height: 10rem;
+    max-width: 40vw;
+    max-height: 40vh;
+    overflow: hidden;
+}
+
+#little-title-style{
+    font-family: "Helvetica";
+    font-weight: 800;
+    font-size: 23px;
+    text-transform: uppercase;
+    padding: 0;
+    margin: auto;
+}
+
+.small-image{
+    max-height: 100%;
+    max-width: 100%;
+}
+
+/*Proximas comidas*/
+.next-meals {
+    width: 20vw;
+    height: 5vh;
+    margin: 1vh 0 1vh 0;
+    background: rgb(4, 123, 197);
+    position: sticky;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    border-radius: 0.3vw;
+    cursor: pointer;
+    overflow: hidden;
+}
+  
+.next-meals::before{
+    content: 'Proximas Comidas';
+    color: white;
+    font-family: 'Century Gothic', sans-serif;
+    text-align: center;
+    font-size: 1.1vw;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    transition: all .5s ease-in-out;
+}
+  
+.next-meals:hover::before{
+    top: -100%;
+}
+  
+.next-meals::after {
+    font-family: 'FontAwesome';
+    content: url("../images/icon-meals.png");
+    font-size: 4vw;
+    position: absolute;
+    top: 200%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all .5s ease-in-out;
+}
+  
+.next-meals:hover::after {
+    top: 50%;
+}
+
+.footer-logo-container{
+    font-size: 1vw;
+}
+
+@media (max-width: 480px) {
+    /* Estilos para móviles pequeños */
+    * {
+        font-size: 16px;
+    }
+    .little-box{
+        max-width: 400vw;
+        max-height: 400vh;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 667px) {
+    /* Estilos para móviles medianos */
+    * {
+        font-size: 18px;
+    }
+    .little-box{
+        max-width: 760px;
+        max-height: 400px;
+    }
+}
+
+@media (min-width: 668px) and (max-width: 1280px) {
+    /* Estilos para móviles grandes */
+    * {
+        font-size: 20px;
+    }
+    .little-box{
+        max-width: 760px;
+        max-height: 400px;
+    }
+}
+
+@media (max-width: 1280px) {
+    #title-Unco{
+        font-size: 1.25rem;
+        font-weight: 800;
+        font-family: "Lucida Console", Courier, monospace;
+        color: #fff;
+        margin: 0;
+        height: 0%;
+    }
+    .logo-Unco{
+        width: 2rem;
+        height: 2rem;
+    }
+    .title-menu-today{
+        color: white;
+        font-weight: 600;
+        font-size: 3.5rem;
+    }
+    #time-foods{
+        font-size: 2.8rem;
+    }
+    .next-meals {
+        width: 40vw;
+        height: 5vh;
+    }
+    .next-meals::before{
+        font-size: 1rem;
+    }
+    .footer-logo{
+        font-size: 200rem;
+    }
+}
